@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  width: 85%;
+  max-width: 350px;
+  padding: 25px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: pop 0.4s ease-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+  color: #ff4d6d;
+  margin-bottom: 8px;
+}
+
+p {
+  color: #444;
+  font-size: 15px;
+}
+
+.heart {
+  font-size: 50px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+button {
+  margin-top: 15px;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255,77,109,0.4);
+}
+
+button:hover {
+  background: #ff2f59;
+}
+
+#loveBox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#loveBox.show {
+  display: flex;
+}
+</style>
+</head>
+
+<body>
+
+<script>
+function showLove() {
+  document.getElementById('loveBox').className = 'show';
+}
+function hideLove() {
+  document.getElementById('loveBox').className = '';
+}
+</script>
+
+<div class="modal">
+  <div class="modal-content">
+    <div class="heart">❤️</div>
+    <h1>Happy Valentine's Day!</h1>
+    <p>
+      Just wanted to remind you how special you are 💕<br>
+      Thank you for making every day sweeter.
+    </p>
+
+    <button onclick="showLove()">Tap Me 😘</button>
+  </div>
+</div>
+
+<div id="loveBox">
+  <div style="background:white; padding:25px; border-radius:15px; text-align:center; width:80%; max-width:320px;">
+    <h2 style="color:#ff4d6d;">💖 I love you 💖</h2>
+    <p>You make my world brighter every day 😘</p>
+    <button onclick="hideLove()">Close</button>
+  </div>
+</div>
+
+</body>
+</html>
